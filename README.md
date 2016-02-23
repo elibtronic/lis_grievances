@@ -1,5 +1,5 @@
 
-# LIS Griveances #
+# LIS Grievances #
 
 ![george](./html/george.jpg)
 
