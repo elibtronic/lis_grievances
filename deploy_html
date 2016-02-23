@@ -1,0 +1,4 @@
+#!/bin/bash
+echo Deploying html files...
+echo Youll probably have to run as s u d o
+cp html/* /var/www/html
