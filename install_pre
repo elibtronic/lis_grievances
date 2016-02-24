@@ -1,0 +1,11 @@
+#!/bin/bash
+echo Attempting to install pre-reqs
+echo run this as S U D O
+
+#Optional Web landingpage
+#apt-get install nginix
+
+cp settings.orig settings.py
+
+#Python Twitter Library
+pip install tweepy
