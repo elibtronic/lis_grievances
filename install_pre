@@ -5,7 +5,8 @@ echo run this as S U D O
 #Optional Web landingpage
 #apt-get install nginix
 
+#Don't ever put your keys in github files...
 cp settings.orig settings.py
 
-#Python Twitter Library
+#Python Twitter Library (install by other means is you need to)
 pip install tweepy
