@@ -20,9 +20,9 @@
 - be sure to add a [Mobile](https://twitter.com/settings/add_phone) number as well or you won't get an API key
 - generate [Twitter API](https://apps.twitter.com/) key
 - be sure to allow access to DM in APP settings (see fig 1)- run `sudo ./install_pre` to install necessary parts (Currently just [tweepy](http://www.tweepy.org/)) and generate settings file
-- Create a Google Form with one text box and get a pre-filled URL, check settings for details/example
+- create a Google Form with one text box and get a pre-filled URL, check settings for details/example
 - add relevate info about form and API account info to `settings.py`
-
+- also add path of grievance text file to `settings.py`
 
 
 ### Checking Grievances ###
@@ -33,10 +33,14 @@
 
 ### Posting Grievances ###
 
-- Your job is now to add the grievances from the spreadsheet to `hopper/grievances_to_air.txt`, ie. use some discretion
+- Your job is now to add the grievances from the spreadsheet to `hopper/grievances_to_air.txt`, or where ever else you specified.  Ie. use some discretion
 - add `post_grievances.py` to crontab to fire at a reasonable time frame (once an hour on the 00s)
 - once again `chmod +x` might be necessary
 
+### Nag Grievances ###
+
+- You can set `nag_grievances.py` to run once a day via cron to troll for more grievances
+- `chmod +x` here too
 
 ![figure_1](./new_app.png)
 
