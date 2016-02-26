@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import tweepy
 from settings import *
@@ -12,7 +12,7 @@ try:
 	auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 	api = tweepy.API(auth)
 except:
-	print "Error Connecting to Twitter"
+	print("Error Connecting to Twitter")
 	exit
 
 try:
@@ -26,12 +26,12 @@ try:
 	grieve_file.close()
 	
 	if g != "":
-		print g
+		print(g)
 		api.update_status(g)
-		print "Done"
-	print "Grievance did not post"
+		print("Done")
+	print("Grievance did not post")
 
 except:
-	print "No Grievances to Air"
+	print("No Grievances to Air")
 	pass
 

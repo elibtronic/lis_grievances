@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import tweepy
 import urllib, urllib2
@@ -14,6 +14,6 @@ try:
 	# The nuclear option, will delete all DM's to the bot.
 	for m in dms:
 		api.destroy_direct_message(m.id)
-	print "Done"
+	print("Done")
 except:
-	print "Could not connect to twitter"
+	print("Could not connect to twitter")
