@@ -7,4 +7,6 @@ CONSUMER_SECRET = ""
 ACCESS_TOKEN = ""
 ACCESS_TOKEN_SECRET = ""
 
+GTPATH = "FILL/hopper/grievances_to_air.txt"
+
 GFORM_URL = "https://docs.google.com/forms/d/FORMKEYHERE/formResponse?entry.XXXXXX="

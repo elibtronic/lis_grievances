@@ -16,7 +16,7 @@ except:
 	exit
 
 try:
-	grieve_file = open("hopper/grievances_to_air.txt","r+")
+	grieve_file = open(GTPATH,"r+")
 	g = grieve_file.readline()
 	rest_g = grieve_file.read()
 	
@@ -29,7 +29,8 @@ try:
 		print(g)
 		api.update_status(g)
 		print("Done")
-	print("Grievance did not post")
+	else:
+		print("Grievance did not post")
 
 except:
 	print("No Grievances to Air")
