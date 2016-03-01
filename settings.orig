@@ -8,5 +8,6 @@ ACCESS_TOKEN = ""
 ACCESS_TOKEN_SECRET = ""
 
 GTPATH = "FILL/hopper/grievances_to_air.txt"
+NAGLIST = "FILL/nag_list.xt"
 
 GFORM_URL = "https://docs.google.com/forms/d/FORMKEYHERE/formResponse?entry.XXXXXX="

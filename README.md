@@ -41,6 +41,7 @@
 
 - You can set `nag_grievances.py` to run once a day via cron to troll for more grievances
 - `chmod +x` here too
+- Add your nags to the text file point to at `NAGLIST`
 
 ![figure_1](./new_app.png)
 

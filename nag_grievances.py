@@ -2,8 +2,10 @@
 
 import tweepy
 from settings import *
+from random import randint
 
 #This file will post a nag to troll for more grievances
+#Reads the nags in NAGLIST and chooses one at random
 
 
 # Try to connect to Twitter first
@@ -16,8 +18,13 @@ except:
 	exit
 
 try:
-	api.update_status('Air your grievances! http://lisgrievances.com for details')
-	print("Done")
+	print(NAGLIST)
+	nag_file = open(NAGLIST,"r")
+	nags = nag_file.readlines()
+	n = randint(0,len(nags)-1)
+	print(nags[n].strip())
+	api.update_status(nags[n].strip())
+	print("...Done")
 
 except:
 	print("Could not nag")

@@ -18,7 +18,7 @@ try:
 
 	for m in dms:
 		mres = api.send_direct_message(m.sender.screen_name, text="Thanks, your grievance has been queued for approval.")
-
+		print(m.text)
 		#Grievances are tabulated annoymously in a Google Form where they are eventually posted
 		#This part of the process will be automated in future version
 		r = http.request('GET',GFORM_URL+quote(m.text))
