@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import tweepy
-import urllib, urllib2
 from settings import *
 
 # Insurance policy, running this will delete DMs the bot has
