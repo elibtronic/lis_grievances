@@ -43,6 +43,12 @@
 - `chmod +x` here too
 - Add your nags to the text file point to at `NAGLIST`
 
+### Bork Grievances ###
+
+- This script will kill any lingering DMs
+- Useful if you need to ssh to the box this is running on, run this first to maintain your integrity
+- Might want to add this to cron to trigger once a day after a check/post cycle, just to make sure, I speak from experience here
+
 ![figure_1](./new_app.png)
 
 **fig 1 **
