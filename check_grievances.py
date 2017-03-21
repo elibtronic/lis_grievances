@@ -18,7 +18,7 @@ try:
 
 	for m in dms:
 		if len(m.text) > 140:
-			mres = api.send_direct_message(m.sender.screen_name, text="Oops. Your grievance is longer then 140 characters, please try again.")
+			mres = api.send_direct_message(m.sender.screen_name, text="Oops. Your grievance is longer than 140 characters, please try again.")
 			print("LONG "+m.text)
 			r = http.request('GET',GFORM_URL+quote("LONG "+m.text))
 		else:
