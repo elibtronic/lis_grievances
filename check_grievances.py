@@ -17,11 +17,16 @@ try:
 	http = urllib3.PoolManager()
 
 	for m in dms:
-		mres = api.send_direct_message(m.sender.screen_name, text="Thanks, your grievance has been queued for approval.")
-		print(m.text)
-		#Grievances are tabulated annoymously in a Google Form where they are eventually posted
-		#This part of the process will be automated in future version
-		r = http.request('GET',GFORM_URL+quote(m.text))
+		if len(m.text) > 140:
+			mres = api.send_direct_message(m.sender.screen_name, text="Oops. Your grievance is longer then 140 characters, please try again.")
+			print("LONG "+m.text)
+			r = http.request('GET',GFORM_URL+quote("LONG "+m.text))
+		else:
+			mres = api.send_direct_message(m.sender.screen_name, text="Thanks, your grievance has been queued for approval.")
+			print(m.text)
+			#Grievances are tabulated annoymously in a Google Form where they are eventually posted
+			#This part of the process will be automated in future version
+			r = http.request('GET',GFORM_URL+quote(m.text))
 
 		#Destroy the message received and the response to it
 		api.destroy_direct_message(m.id)
