@@ -10,4 +10,6 @@ ACCESS_TOKEN_SECRET = ""
 GTPATH = "FILL/hopper/grievances_to_air.txt"
 NAGLIST = "FILL/nag_list.xt"
 
+IMG_CACHE = "img_temp/"
+
 GFORM_URL = "https://docs.google.com/forms/d/FORMKEYHERE/formResponse?entry.XXXXXX="

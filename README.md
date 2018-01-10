@@ -36,6 +36,7 @@
 - Your job is now to add the grievances from the spreadsheet to `hopper/grievances_to_air.txt`, or where ever else you specified.  Ie. use some discretion
 - add `post_grievances.py` to crontab to fire at a reasonable time frame (once an hour on the 00s)
 - once again `chmod +x` might be necessary
+- There is very limited media support built in. If there is a URL to a GIF or JPG in a DM, it will post approriately, but that is pretty much it
 
 ### Nag Grievances ###
 
