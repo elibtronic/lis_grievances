@@ -13,7 +13,6 @@ try:
 	grieve_file = open(GTPATH,"r+")
 	g = grieve_file.readline()
 	if g != "":
-		print(g)
 		rest_g = grieve_file.read()
 	
 		grieve_file.seek(0)
@@ -54,4 +53,18 @@ try:
 except:
 	print("No Grievances to Air")
 	pass
+
+
+# Delete any lingering DMs by borking them
+try:
+        auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+        auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+        api = tweepy.API(auth)
+        dms = api.direct_messages()
+        # The nuclear option, will delete all DM's to the bot.
+        for m in dms:
+                api.destroy_direct_message(m.id)
+        print("Done Borking")
+except:
+        print("Could not connect to twitter to bork")
 
