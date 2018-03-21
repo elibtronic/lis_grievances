@@ -3,7 +3,6 @@
 import tweepy, re, urllib.request,os
 from settings import *
 
-
 #This file will look into the text file and post one tweet per go
 
 
@@ -34,11 +33,14 @@ try:
 		except:
 			m_ext = ""
 			m_fn = ""
+		
+
 
 		#Check/download media then post
 		if (m_ext == ".gif" or m_ext == ".jpg" or m_ext == ".png"):
-			g_text = re.sub('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+','',g)
-			urllib.request.urlretrieve(m_url,m_fn)
+
+			g_text = re.sub(m_url,'',g)
+			resp = urllib.request.urlretrieve(m_url,m_fn)			
 			print("Media tweeting: "+g_text)
 			api.update_with_media(m_fn,g_text)
 			os.remove(m_fn)

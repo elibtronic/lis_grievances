@@ -22,7 +22,7 @@ try:
 			print("LONG "+m.text)
 			r = http.request('GET',GFORM_URL+quote("LONG "+m.text))
 		else:
-			mres = api.send_direct_message(m.sender.screen_name, text="Thanks, your grievance has been queued for approval.")
+			mres = api.send_direct_message(m.sender.screen_name, text="Thanks, your grievance has been queued for approval. More details here: http://lisgrievances.com/about.html")
 			print(m.text)
 			#Grievances are tabulated annoymously in a Google Form where they are eventually posted
 			#This part of the process will be automated in future version
