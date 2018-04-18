@@ -9,11 +9,12 @@ from settings import *
 # Try to connect to Twitter first
 
 try:
-	grieve_file = open(GTPATH,"r+")
+	grieve_file = open(GTPATH,"rb+")
 	g = grieve_file.readline()
+
+
 	if g != "":
 		rest_g = grieve_file.read()
-	
 		grieve_file.seek(0)
 		grieve_file.truncate()
 		grieve_file.write(rest_g)
@@ -27,7 +28,8 @@ try:
 		
 		#If we have a URL with a JPG or GIF ending we want to post it		
 		try:
-			m_url = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+',g)[0]
+			g_string = str(g.decode("unicode_escape"))
+			m_url = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+',g_string)[0]
 			m_fn = IMG_CACHE+m_url.rsplit('/')[-1]
 			m_ext = m_fn[-4:]
 		except:
@@ -39,21 +41,21 @@ try:
 		#Check/download media then post
 		if (m_ext == ".gif" or m_ext == ".jpg" or m_ext == ".png"):
 
-			g_text = re.sub(m_url,'',g)
+			g_text = g.split(b' ')[1]
 			resp = urllib.request.urlretrieve(m_url,m_fn)			
-			print("Media tweeting: "+g_text)
+			print("Media tweeting: "+str(g_text))
 			api.update_with_media(m_fn,g_text)
 			os.remove(m_fn)
 		else:
-			print("Tweeting: "+g)
+			print("Tweeting: "+str(g))
 			api.update_status(g)
 
 		print("Done")
 	else:
 		print("Grievance did not post")
 
-except:
-	print("No Grievances to Air")
+except Exception as e:
+	print("Did not post, caught exception ",e)
 	pass
 
 
@@ -65,6 +67,7 @@ try:
         dms = api.direct_messages()
         # The nuclear option, will delete all DM's to the bot.
         for m in dms:
+                print("Passing on bork")
                 api.destroy_direct_message(m.id)
         print("Done Borking")
 except:
