@@ -5,6 +5,13 @@
 
 *Because we all need to air our grievances some time*
 
+
+[Project Homepage](http://lisgrievances.com)
+
+## V2. ##
+- Supports Emojis! (finally)
+- Of course, there is a [patreon](https://www.patreon.com/lis_grievances)
+
 ## Setup ##
 
 ### OPTIONAL: Web files ###
@@ -19,10 +26,12 @@
 - create your *_grievances* account on twitter
 - be sure to add a [Mobile](https://twitter.com/settings/add_phone) number as well or you won't get an API key
 - generate [Twitter API](https://apps.twitter.com/) key
-- be sure to allow access to DM in APP settings (see fig 1)- run `sudo ./install_pre` to install necessary parts (Currently just [tweepy](http://www.tweepy.org/)) and generate settings file
+- be sure to allow access to DM in APP settings (see fig 1)
+- run `sudo ./install_pre` to install necessary parts (Currently just [tweepy](http://www.tweepy.org/)) and generate settings file
 - create a Google Form with one text box and get a pre-filled URL, check settings for details/example
 - add relevate info about form and API account info to `settings.py`
 - also add path of grievance text file to `settings.py`
+- create a temp directory for downloaded image files, used in media posting, set in `settings.py`
 
 
 ### Checking Grievances ###
@@ -30,6 +39,7 @@
 - add `check_grievances.py` to crontab to fire at a reasonable time frame (once an hour on the 30 minute mark)
 - also `chmod +x` as well
 - Grievances will be posted to your Google Spreadsheet
+- after each check it kills any lingering DMs (like bork used to do)
 
 ### Posting Grievances ###
 
@@ -37,18 +47,18 @@
 - add `post_grievances.py` to crontab to fire at a reasonable time frame (once an hour on the 00s)
 - once again `chmod +x` might be necessary
 - There is very limited media support built in. If there is a URL to a GIF or JPG in a DM, it will post approriately, but that is pretty much it
+- after a post it checks/kills any lingering DMs (like bork used to do)
 
 ### Nag Grievances ###
 
 - You can set `nag_grievances.py` to run once a day via cron to troll for more grievances
 - `chmod +x` here too
 - Add your nags to the text file point to at `NAGLIST`
+- Ah, I don't really use this much, at all. I suggest you don't either
 
 ### Bork Grievances ###
 
-- This script will kill any lingering DMs
-- Useful if you need to ssh to the box this is running on, run this first to maintain your integrity
-- Might want to add this to cron to trigger once a day after a check/post cycle, just to make sure, I speak from experience here
+- Deprecated. no longer needed
 
 ![figure_1](./new_app.png)
 
