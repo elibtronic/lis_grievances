@@ -41,7 +41,7 @@ try:
 		#Check/download media then post
 		if (m_ext == ".gif" or m_ext == ".jpg" or m_ext == ".png"):
 
-			g_text = g.split(b' ')[1]
+			g_text = b' '.join(g.split(b' ')[1:])
 			resp = urllib.request.urlretrieve(m_url,m_fn)			
 			print("Media tweeting: "+str(g_text))
 			api.update_with_media(m_fn,g_text)
