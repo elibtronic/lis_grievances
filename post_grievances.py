@@ -12,8 +12,7 @@ try:
 	grieve_file = open(GTPATH,"rb+")
 	g = grieve_file.readline()
 
-
-	if g != "":
+	if len(g) != 0:
 		rest_g = grieve_file.read()
 		grieve_file.seek(0)
 		grieve_file.truncate()
@@ -52,7 +51,8 @@ try:
 
 		print("Done")
 	else:
-		print("Grievance did not post")
+		print("No Grievance to post")
+		exit()
 
 except Exception as e:
 	print("Did not post, caught exception ",e)

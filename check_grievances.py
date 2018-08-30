@@ -13,7 +13,9 @@ try:
 	auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 	auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 	api = tweepy.API(auth)
+	
 	dms = api.direct_messages(full_text=True)
+	print("here")
 	http = urllib3.PoolManager()
 
 	#Posts come in as unicode characters, prints ascii safe version to the screen
@@ -41,6 +43,7 @@ try:
 except Exception as e:
 	print("Exception: ",e)
 	print("Could not connect to Twitter to check")
+	exit()
 
 
 # Delete any lingering DMs by borking them
