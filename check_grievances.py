@@ -15,7 +15,6 @@ try:
 	api = tweepy.API(auth)
 	
 	dms = api.direct_messages(full_text=True)
-	print("here")
 	http = urllib3.PoolManager()
 
 	#Posts come in as unicode characters, prints ascii safe version to the screen

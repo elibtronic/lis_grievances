@@ -13,3 +13,7 @@ apt-get install python3-pip
 
 #Python Twitter Library (install by other means is you need to)
 pip3 install tweepy
+
+##Temporary DM Workaround
+apt-get install ruby
+gem install twurl
