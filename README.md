@@ -8,6 +8,10 @@
 
 [Project Homepage](http://lisgrievances.com)
 
+## V2.5 ##
+- Uses [TWURL](https://github.com/twitter/twurl) for DM interaction
+- on account, checking needs to be done manually
+
 ## V2. ##
 - Supports Emojis! (finally)
 - Of course, there is a [patreon](https://www.patreon.com/lis_grievances)
@@ -33,13 +37,18 @@
 - also add path of grievance text file to `settings.py`
 - create a temp directory for downloaded image files, used in media posting, set in `settings.py`
 
-
 ### Checking Grievances ###
+- Enable TWURL in your session
+- Run `full_otherdm.py` from an SSH terminal
+- Will check for DMS and post to Google Form (with lots of in-between JSON manipulation, yes one day I'll fix)
+- Sorry can't automate it
+
+~~ ### Checking Grievances ###
 
 - add `check_grievances.py` to crontab to fire at a reasonable time frame (once an hour on the 30 minute mark)
 - also `chmod +x` as well
 - Grievances will be posted to your Google Spreadsheet
-- after each check it kills any lingering DMs (like bork used to do)
+- after each check it kills any lingering DMs (like bork used to do) ~~
 
 ### Posting Grievances ###
 
@@ -70,4 +79,4 @@
 
 An art project by [@elibtronic](https://twitter.com/elibtronic)
 
-[elibtronic.ca](https://elibtronic.ca)
+[elibtronic.ca](https://elibtronic.ca

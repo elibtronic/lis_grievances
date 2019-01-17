@@ -46,15 +46,15 @@ except Exception as e:
 
 
 # Delete any lingering DMs by borking them
-try:
-	auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-	auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
-	api = tweepy.API(auth)
-	dms = api.direct_messages()
+#try:
+#	auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+#	auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+#	api = tweepy.API(auth)
+#	dms = api.direct_messages()
 	# The nuclear option, will delete all DM's to the bot.
-	for m in dms:
-		print("pass")
-		api.destroy_direct_message(m.id)
-	print("Done Borking")
-except:
-	print("Could not connect to twitter to bork")
+#	for m in dms:
+#		print("pass")
+#		api.destroy_direct_message(m.id)
+#	print("Done Borking")
+#except:
+#	print("Could not connect to twitter to bork")
