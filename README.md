@@ -43,12 +43,12 @@
 - Will check for DMS and post to Google Form (with lots of in-between JSON manipulation, yes one day I'll fix)
 - Sorry can't automate it
 
-~~ ### Checking Grievances ###
+~~### Checking Grievances ###~~
 
-- add `check_grievances.py` to crontab to fire at a reasonable time frame (once an hour on the 30 minute mark)
-- also `chmod +x` as well
-- Grievances will be posted to your Google Spreadsheet
-- after each check it kills any lingering DMs (like bork used to do) ~~
+~~- add `check_grievances.py` to crontab to fire at a reasonable time frame (once an hour on the 30 minute mark)~~
+~~- also `chmod +x` as well~~
+~~- Grievances will be posted to your Google Spreadsheet~~
+~~- after each check it kills any lingering DMs (like bork used to do)~~
 
 ### Posting Grievances ###
 
