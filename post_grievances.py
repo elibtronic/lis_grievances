@@ -25,7 +25,8 @@ try:
 		api = tweepy.API(auth)
 
 		
-		#If we have a URL with a JPG or GIF ending we want to post it		
+		#If we have a URL with a JPG or GIF ending we want to post it
+		#URL has to come first		
 		try:
 			g_string = str(g.decode("unicode_escape"))
 			m_url = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+',g_string)[0]

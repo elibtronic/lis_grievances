@@ -45,7 +45,7 @@ for e in dj["events"]:
 	os.system(del_line)
 
 	#Send success message & delete it
-	feedback_line = "twurl -A 'Content-type: application/json' -X POST /1.1/direct_messages/events/new.json -d '{\"event\": {\"type\": \"message_create\", \"message_create\":{\"target\": {\"recipient_id\": \""+sender_id+"\"}, \"message_data\": {\"text\": \"Thanks for submitting your grievance. It has been queued for approval.\"}}}}'"
+	feedback_line = "twurl -A 'Content-type: application/json' -X POST /1.1/direct_messages/events/new.json -d '{\"event\": {\"type\": \"message_create\", \"message_create\":{\"target\": {\"recipient_id\": \""+sender_id+"\"}, \"message_data\": {\"text\": \"Thanks for submitting your grievance. \\n It has been queued for approval. \\n Details here: http:\/\/lisgrievances.com  \"}}}}'"
 	os.system(feedback_line+"> /home/grief/lis_grievances/to_del.json")
 	del_mes = json.loads(open("/home/grief/lis_grievances/to_del.json").read())
 	del_mes_id = del_mes["event"]["id"]
