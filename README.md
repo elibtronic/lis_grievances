@@ -8,6 +8,9 @@
 
 [Project Homepage](http://lisgrievances.com)
 
+## V3.0 ##
+- Introduction of the [Grief Index](https://lisgrievances.com/grief_index.html)
+
 ## V2.5 ##
 - Uses [TWURL](https://github.com/twitter/twurl) for DM interaction
 - on account, checking needs to be done manually
