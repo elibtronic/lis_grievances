@@ -13,3 +13,6 @@ NAGLIST = "FILL/nag_list.xt"
 IMG_CACHE = "img_temp/"
 
 GFORM_URL = "https://docs.google.com/forms/d/FORMKEYHERE/formResponse?entry.XXXXXX="
+
+#Publish your Form as CSV, plop URL here
+CSV_DATA =
