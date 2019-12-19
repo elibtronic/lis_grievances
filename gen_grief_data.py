@@ -102,13 +102,13 @@ def gen_viz():
     ts = []
     ds = []
 
-    with open("grief_series.csv") as f:
+    with open("html/grief_series.csv") as f:
         reader = csv.reader(f)
         for row in reader:
             ts.append(row[0])
             ds.append(float(row[1]))
 
-    total_gi = float(open("alltime.txt","r").readline())
+    total_gi = float(open("html/alltime.txt","r").readline())
     t_gi_s = [total_gi] * len(ts)
 
     plt.figure(figsize=(12, 4))
