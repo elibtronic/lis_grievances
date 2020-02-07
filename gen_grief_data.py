@@ -34,9 +34,10 @@ def grief_index(df, s_date="",e_date=""):
         #print(n,d)
 
     #Actual Grief Index calculated below
-    gi = round(n/d * 100,4)
+    gi = round((n / (n+d)) * 100,4)
 
     return gi
+
 
 def grief_to_file():
     gatfile = open("html/alltime.txt","w")
