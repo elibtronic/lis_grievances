@@ -118,7 +118,7 @@ def gen_viz():
     plt.plot(ts,ds)
     plt.plot(t_gi_s)
     plt.legend(["Monthly","Overall"])
-    plt.ylabel('grief ratio %')
+    plt.ylabel('grief index')
     plt.xlabel('month')
     plt.xticks(rotation=90)
     plt.title("THE GRIEF INDEX")
