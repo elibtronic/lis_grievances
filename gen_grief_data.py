@@ -88,7 +88,7 @@ def grief_series(df):
     #current year
     for y in range(datetime.datetime.now().year,datetime.datetime.now().year+1):
         for m in range(1,13):
-            if m <= datetime.datetime.now().month:
+            if m < datetime.datetime.now().month:
                 start_d = str(m)+"/1/"+str(y)
                 end_d = str(m)+"/"+str(last_day[m])+"/"+str(y)
                 #print(start_d,"-",end_d,"-",grief_index(df,start_d,end_d))
@@ -130,4 +130,3 @@ if __name__ == "__main__":
     grief_to_file()
     grief_series(df)
     gen_viz()
-
