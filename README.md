@@ -8,6 +8,15 @@
 
 [Project Homepage](http://lisgrievances.com)
 
+## V3.5 ##
+- Automation is back
+- `full_otherdm.py` can be added to `crontab` giving something similar to the following:
+
+``
+*/30 7-21 * * * /home/grief/lis_grievances/post_grievances.py
+*/15 7-21 * * * /home/grief/lis_grievances/full_otherdm.py
+``
+
 ## V3.0 ##
 - Introduction of the [Grief Index](https://lisgrievances.com/grief_index.html)
 
@@ -44,14 +53,7 @@
 - Enable TWURL in your session
 - Run `full_otherdm.py` from an SSH terminal
 - Will check for DMS and post to Google Form (with lots of in-between JSON manipulation, yes one day I'll fix)
-- Sorry can't automate it
-
-~~### Checking Grievances ###~~
-
-~~- add `check_grievances.py` to crontab to fire at a reasonable time frame (once an hour on the 30 minute mark)~~
-~~- also `chmod +x` as well~~
-~~- Grievances will be posted to your Google Spreadsheet~~
-~~- after each check it kills any lingering DMs (like bork used to do)~~
+- Can be added to cron as specified in V3.5 description
 
 ### Posting Grievances ###
 
