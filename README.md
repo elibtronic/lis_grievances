@@ -12,10 +12,9 @@
 - Automation is back
 - `full_otherdm.py` can be added to `crontab` giving something similar to the following:
 
-``
-*/30 7-21 * * * /home/grief/lis_grievances/post_grievances.py
-*/15 7-21 * * * /home/grief/lis_grievances/full_otherdm.py
-``
+``*/30 7-21 * * * /home/grief/lis_grievances/post_grievances.py``
+``*/15 7-21 * * * /home/grief/lis_grievances/full_otherdm.py``
+
 
 ## V3.0 ##
 - Introduction of the [Grief Index](https://lisgrievances.com/grief_index.html)
