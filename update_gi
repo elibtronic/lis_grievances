@@ -1,0 +1,7 @@
+#!/bin/bash
+echo Updating GI and SCP to final location on live server
+python3 gen_grief_data.py
+scp html/grief_index.png grief@lisgrievances.com:/home/grief/lis_grievances/html
+scp html/alltime.txt grief@lisgrievances.com:/home/grief/lis_grievances/html
+scp html/grief_series.csv grief@lisgrievances.com:/home/grief/lis_grievances/html
+echo now do the stuff on the host
