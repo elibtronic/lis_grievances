@@ -1,7 +1,6 @@
-
 import pandas as pd
 import datetime
-import matplotlib
+#import matplotlib
 import numpy as np
 import csv
 import matplotlib.pyplot as plt
@@ -27,7 +26,7 @@ def grief_index(df, s_date="",e_date=""):
         t_window = df[(df['lisg'] >= start_date) & (df['lisg'] <= end_date)]
 
         n = t_window.loc[t_window["status"] == "?"]["status"].count()
-        d = t_window.loc[t_window["status"] == "X"]["status"].count() + t_window.loc[t_window["status"] == "?"]["status"].count()
+        d = t_window.loc[t_window["status"] == "X"]["status"].count() + t_window.loc[t_window["status"] =="?"]["status"].count()
 
         #print(t_window)
         #print(n,d)
@@ -101,7 +100,10 @@ def grief_series(df):
 
 def gen_viz():
 
+    #time series
     ts = []
+
+    #list of monthly GI scores
     ds = []
 
     with open("html/grief_series.csv") as f:
@@ -111,17 +113,24 @@ def gen_viz():
             ds.append(float(row[1]))
 
     total_gi = float(open("html/alltime.txt","r").readline())
+
+    #overall GI score
     t_gi_s = [total_gi] * len(ts)
 
-    plt.figure(figsize=(12, 4))
-    plt.plot(ts,ds)
-    plt.plot(t_gi_s)
-    plt.legend(["Monthly","Overall"])
-    plt.ylabel('grief index')
-    plt.xlabel('month')
-    plt.xticks(rotation=90)
-    plt.title("THE GRIEF INDEX")
-    plt.savefig('html/grief_index.png', bbox_inches='tight')
+
+    #chart params
+    fig = plt.figure(figsize=(12,6))
+    ax = fig.add_subplot(211)
+    ax.plot(ts,ds)
+    ax.plot(t_gi_s)
+    ax.legend(["Monthly","Overall"])
+    ax.set_title("THE GRIEF INDEX")
+    ax.set_xlabel('month')
+    ax.set_ylabel('grief index')
+    ax.set_xticks(np.arange(0,len(ts)+1,3))
+    plt.xticks(rotation = 45)
+    plt.savefig('html/grief_index.png')
+    #plt.show()
 
 
 if __name__ == "__main__":
@@ -130,3 +139,6 @@ if __name__ == "__main__":
     grief_to_file()
     grief_series(df)
     gen_viz()
+
+
+    
