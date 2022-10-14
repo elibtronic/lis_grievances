@@ -5,6 +5,9 @@
 
 *Because we all need to air our grievances some time*
 
+Read about the first five years [here](http://hdl.handle.net/10464/16867)
+
+
 
 [Project Homepage](http://lisgrievances.com)
 
@@ -84,4 +87,4 @@
 
 An art project by [@elibtronic](https://twitter.com/elibtronic)
 
-[elibtronic.ca](https://elibtronic.ca
+[elibtronic.ca](https://elibtronic.ca)
